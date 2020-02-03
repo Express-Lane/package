@@ -1,0 +1,34 @@
+{
+  "name": "@trip4077/express-lane",
+  "version": "1.0.0",
+  "description": "Quickly build your APIs with this Node / Express boilerplate tool",
+  "main": "src/index.js",
+  "bin": {
+    "@trip4077/express-lane": "bin/express-lane",
+    "express-lane": "bin/express-lane"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "node",
+    "express",
+    "boilerplate"
+  ],
+  "author": "Bernard Johnson III",
+  "license": "MIT",
+  "dependencies": {
+    "arg": "^4.1.3",
+    "chalk": "^3.0.0",
+    "esm": "^3.2.25",
+    "execa": "^4.0.0",
+    "inquirer": "^7.0.4",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^1.0.0"
+  }
+}

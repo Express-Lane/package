@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "bin": {
     "@trip4077/quick-lane": "bin/quick-lane",
-    "express-lane": "bin/quick-lane"
+    "quick-lane": "bin/quick-lane"
   },
   "publishConfig": {
     "access": "public"

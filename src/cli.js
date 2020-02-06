@@ -23,10 +23,6 @@ const parseArguments = (rawArgs) => {
 export const cli = async args => {
     const options =parseArguments(args);
 
-    try {
-        if(options.runTemplate) await createProject(options)
-        else console.log('Please Enter Command...')
-    } catch(err) {
-        console.log(err)
-    }
+    if(options.runTemplate) await createProject(options)
+    else console.log("Please Enter a Command")
 }

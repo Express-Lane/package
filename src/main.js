@@ -17,6 +17,19 @@ const copyTemplateFIles = options => {
     } );
 }
 
+const writeAuth = options => {
+    const base = process.cwd() + '/data/migrations/'
+    const file = fs.readdirSync(base)[0];
+   
+    fs.writeFile(`${base}/${file}`, userTable, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+        return;
+    }); 
+
+}
+
 const installDeps = async options => {
     const result = await execa('npm', ['install'], { cwd: options.targetDirectory });
 
@@ -78,16 +91,6 @@ const gitInit = async options => {
         return;
     }
 }
-
-// const activateServer = async options => {
-//     const result = await execa('npm', ['run', 'server'], { cwd: options.targetDirectory });
-
-//     if(result.failed) {
-//         return Promise.reject(new Error('Table Creation Failed'))
-//     } else {
-//         return;
-//     }
-// }
 
 export const createProject = async options => {
     options = {

@@ -5,9 +5,9 @@ const parseArguments = (rawArgs) => {
     const args = arg(
         {
             '--create-server': Boolean,
-            '--install': Boolean,
+            '--auth': Boolean,
             '-c': '--create-server',
-            '-i': '--install'
+            '-a': '--auth'
         },
         {
             argv: rawArgs.slice(2)
@@ -16,12 +16,17 @@ const parseArguments = (rawArgs) => {
 
     return {
         runTemplate: args['--create-server'] || false,
-        runInstall: args['--install'] || false
+        runAuth: args['--auth'] || false
     }
 }
 
 export const cli = async args => {
-    const options = parseArguments(args);
+    const options =parseArguments(args);
 
-    await createProject(options)
+    try {
+        if(options.runTemplate) await createProject(options)
+        else console.log('Please Enter Command...')
+    } catch(err) {
+        console.log(err)
+    }
 }

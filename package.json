@@ -1,11 +1,11 @@
 {
-  "name": "@trip4077/express-lane",
+  "name": "quick-lane",
   "version": "1.0.0",
   "description": "Quickly build your APIs with this Node / Express boilerplate tool",
   "main": "src/index.js",
   "bin": {
-    "@trip4077/express-lane": "bin/express-lane",
-    "express-lane": "bin/express-lane"
+    "@trip4077/quick-lane": "bin/quick-lane",
+    "express-lane": "bin/quick-lane"
   },
   "publishConfig": {
     "access": "public"

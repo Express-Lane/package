@@ -1,6 +1,6 @@
 {
   "name": "quick-lane",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Quickly build your APIs with this Node / Express boilerplate tool",
   "main": "src/index.js",
   "bin": {

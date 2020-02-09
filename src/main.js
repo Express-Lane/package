@@ -5,7 +5,6 @@ import path from 'path';
 import { promisify } from 'util';
 import execa from 'execa';
 import Listr from 'listr';
-import { projectInstall } from 'pkg-install';
 import { userTable } from './UserTableFile';
 
 const access = promisify( fs.access );
@@ -101,16 +100,16 @@ export const createProject = async options => {
     const currentFileUrl = import.meta.url;
     
     const templateDir = path.resolve(
-        new URL(currentFileUrl).pathname,
+        new URL(currentFileUrl.substring(8)).pathname,
         '../../template',
     );
     
-    options.templateDirectory = templateDir.substr(3);
+    options.templateDirectory = templateDir;
 
     try {
-        await access( templateDir.substr(3), fs.constants.R_OK )
+        await access( templateDir, fs.constants.R_OK )
     } catch (err) {
-        console.log('Invalid Template Name::', err);
+        console.log('Invalid Template Name::', err, '\nDirectory::', templateDir);
         process.exit(1);
     }
 
